@@ -1,14 +1,15 @@
 import './concatAll';
 import data from './data';
 
-const out = data.map( function( list){
-  return list.foods.map( function( food){
-    return { created: list.created, name: food.name, cost: food.cost};
-  });
+// id, title and 150x200 boxart
+const out = data.map( function( movieList){
+  return movieList.videos.map( function( video){
+    return video.boxarts.filter( function( boxart){
+      return boxart.width === 150 && boxart.height === 200;
+    }).map( function( boxart){
+      return { id: video.id, title: video.title, boxart: boxart.url};
+    });
+  }).concatAll();
 }).concatAll();
-out.sort( function( a, b){
-  if( a.name > b.name) return 1;
-  else if( a.name < b.name) return -1;
-  return 0;
-});
+
 console.log( out);
