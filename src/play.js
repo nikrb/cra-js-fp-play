@@ -21,9 +21,7 @@ const out = lists.map( function( list){
           }).reduce( function( acc, cur){
             if( cur.width < acc.width) return cur;
             return acc;
-          }).map( function( ba){
-            return ba.url;
-          })[0]
+          }).url
       };
     })
   };
