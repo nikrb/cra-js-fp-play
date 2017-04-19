@@ -18,6 +18,7 @@ Array.prototype.concatMap = function(projectionFunctionThatReturnsArray) {
 	.concatAll();
 };
 
+/*
 // this version returns an array
 Array.prototype.reduce = function(combiner, initialValue) {
 	var counter,
@@ -51,3 +52,4 @@ Array.prototype.reduce = function(combiner, initialValue) {
 		return [accumulatedValue];
 	}
 };
+*/
