@@ -29,14 +29,14 @@ export default class Tabs extends React.Component {
       );
     }
     return (
-      <ul className="tabs__labels">
+      <ul className="tabs_labels">
         {this.props.children.map(labels.bind(this))}
       </ul>
     );
   }
   _renderContent = () => {
     return (
-      <div className="tabs__content">
+      <div className="tabs_content">
         {this.props.children[this.state.selected]}
       </div>
     );
