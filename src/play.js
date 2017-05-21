@@ -1,14 +1,18 @@
-import './concatAll';
-import data from './data';
 
-const out = data.map( function( list){
-  return list.foods.map( function( food){
-    return { created: list.created, name: food.name, cost: food.cost};
+const test = () => {
+  const t = Array.from({length: 5}, (v, i) => {
+    return { res: `hello${i}`};
   });
-}).concatAll();
-out.sort( function( a, b){
-  if( a.name > b.name) return 1;
-  else if( a.name < b.name) return -1;
-  return 0;
-});
-console.log( out);
+  console.log( t);
+
+  // let numbered_page_buttons = [for( i of Array(10).keys())]
+  // .map( (i) => {
+  //   return (
+  //     <button type="button" style={btn} onClick={this.handleClick} value=i >
+  //       i+1
+  //     </button>
+  //   );
+  // });
+  // console.log( numbered_page_buttons);
+};
+test();
