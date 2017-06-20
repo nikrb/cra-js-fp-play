@@ -19,7 +19,7 @@ export default class Bubble extends React.Component {
       backgroundColor: "#4a4",
       width:"3em",
       opacity: 1,
-      top: "0px",
+      top: this.props.top+"px",
       left: this.props.left+"px",
       transition: "1.0s"
       // animation: "vertical_anim 1s forwards"

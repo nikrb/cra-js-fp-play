@@ -13,7 +13,7 @@ export default class Play extends React.Component {
     const new_key = this.state.bubble_list.length;
     this.setState( {show_bubble: true,
       bubble_list : [...this.state.bubble_list,
-        <Bubble key={new_key} top="0" left={this.mouse_x} onFinished={this.finished} />
+        <Bubble key={new_key} top="-50" left={this.mouse_x} onFinished={this.finished} />
       ]});
   };
   finished = () => {
@@ -27,10 +27,10 @@ export default class Play extends React.Component {
     return (
       <div>
         <div>
-          {this.state.bubble_list}
+          <button onClick={this.test}>Test</button>
         </div>
         <div>
-          <button onClick={this.test}>Test</button>
+          {this.state.bubble_list}
         </div>
       </div>
     );
