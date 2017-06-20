@@ -7,10 +7,11 @@ export default class Play extends React.Component {
   };
   mouse_x = 0;
   mouse_y = 0;
+  bubble_key = 0;
   test = (e) => {
     this.mouse_x = e.pageX;
     this.mouse_y = e.pageY;
-    const new_key = this.state.bubble_list.length;
+    const new_key = this.bubble_key++;
     this.setState( {show_bubble: true,
       bubble_list : [...this.state.bubble_list,
         <Bubble key={new_key} top="-50" left={this.mouse_x} onFinished={this.finished} />
@@ -24,12 +25,13 @@ export default class Play extends React.Component {
   };
   render = () => {
     console.log( this.state.bubble_list);
+    const style={ position: "relative"};
     return (
       <div>
         <div>
           <button onClick={this.test}>Test</button>
         </div>
-        <div>
+        <div style={style}>
           {this.state.bubble_list}
         </div>
       </div>

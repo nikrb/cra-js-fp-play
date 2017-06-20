@@ -15,7 +15,7 @@ export default class Bubble extends React.Component {
   };
   render = () => {
     const box = {
-      position: "relative",
+      position: "absolute",
       backgroundColor: "#4a4",
       width:"3em",
       opacity: 1,
