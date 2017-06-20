@@ -14,7 +14,7 @@ export default class Play extends React.Component {
     const new_key = this.bubble_key++;
     this.setState( {show_bubble: true,
       bubble_list : [...this.state.bubble_list,
-        <Bubble key={new_key} top="-50" left={this.mouse_x} onFinished={this.finished} />
+        <Bubble key={new_key} top="-50" left={this.mouse_x} onFinished={this.finished} text={new_key} />
       ]});
   };
   finished = () => {
@@ -24,7 +24,6 @@ export default class Play extends React.Component {
     this.setState( {bubble_list: nl});
   };
   render = () => {
-    console.log( this.state.bubble_list);
     const style={ position: "relative"};
     return (
       <div>

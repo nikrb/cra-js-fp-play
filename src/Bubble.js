@@ -31,7 +31,7 @@ export default class Bubble extends React.Component {
     }
     return (
       <div style={style} onTransitionEnd={this.finish} >
-        bubble
+        {this.props.text}
       </div>
     );
   };
